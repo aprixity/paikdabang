@@ -12,24 +12,12 @@
 
     <!-- script -->
     <script src="./script/index.js"></script>
-
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR&family=Orbit&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div id="wrap">
-      <!-- header -->
-      <div class="background">
-        <video src="./assert/빽다방 영상.mp4" muted autoplay loop=""></video>
-      </div>
       <header id="header">
         <h1 class="logo">
-          <a href="#"><img id="img" src="./assert/header/logo.png" alt="로고" /></a>
+          <a href="#"></a>
         </h1>
         <nav class="nav">
           <ul>
@@ -86,11 +74,37 @@
           </ul>
         </nav>
       </header>
+      <div id="container">
+        <!-- header -->
+        <section class="background">
+          <video src="./assert/빽다방 영상.mp4" muted autoplay loop=""></video>
+        </section>
 
-      <!-- main -->
-      <main id="main">
-        <h1>신메뉴</h1>
-      </main>
+        <!-- new-menu -->
+        <section id="new-menu">
+          <h1><span>NEW!</span><br />신메뉴</h1>
+          <ul>
+            <li>
+              <img src="./assert/new-menu/new-menu1.png" alt="소울트로닉에이드" />
+              <p>소울트로닉에이드</p>
+              <br />
+              <span>빽다방 X 현대자동차 ‘캐스퍼’<br />레몬과 자몽의 상큼함이 느껴지는 에이드 </span>
+            </li>
+            <li>
+              <img src="./assert/new-menu/new-menu2.png" alt="트로피칼팝핑스무디" />
+              <p>트로피칼팝핑스무디</p>
+              <br />
+              <span>톡톡 튀는 팝핑캔디를 올린<br />달콤한 맛의 열대과일 스무디 </span>
+            </li>
+            <li>
+              <img src="./assert/new-menu/new-menu3.png" alt="블루캔디밀크쉐이크" />
+              <p>블루캔디밀크쉐이크</p>
+              <br />
+              <span>청량한 컬러에 부드럽고 달콤한 맛</span>
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
   </body>
 </html>

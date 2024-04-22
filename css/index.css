@@ -1,8 +1,92 @@
 .background {
-  position: relative;
+  /* position: relative; */
 }
 .background video {
   width: 100%;
   height: 100vh;
   object-fit: cover;
+}
+
+/* new-menu */
+#new-menu {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  position: relative;
+}
+#new-menu > h1 > span {
+  font-size: 22px;
+  position: absolute;
+  left: 45%;
+  top: 18%;
+  transform: skew(15deg, -15deg);
+  color: var(--main);
+}
+#new-menu h1 {
+  font-size: 50px;
+  font-family: var(--sub-title);
+  color: var(--main);
+  text-align: center;
+  padding-top: 130px;
+}
+#new-menu img {
+  width: 400px;
+}
+#new-menu ul {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+#new-menu ul li {
+  transform: scale(1) rotate(30);
+  transition: 0.5s;
+  position: relative;
+  text-align: center;
+  width: 550px;
+}
+#new-menu ul li:hover img {
+  animation: new-menu 0.9s;
+  animation-fill-mode: forwards;
+}
+#new-menu ul li:hover p {
+  font-family: var(--title);
+  color: var(--main);
+  bottom: 0%;
+  font-size: 22px;
+}
+#new-menu ul li:hover span {
+  display: block;
+}
+#new-menu p {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  font-size: 20px;
+  transform: translateX(-50%);
+}
+#new-menu > ul > li > span {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 102%;
+  transform: translateX(-50%);
+  font-size: 17px;
+}
+
+@keyframes new-menu {
+  0% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.2);
+  }
+  75% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1.2);
+  }
 }

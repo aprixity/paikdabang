@@ -1,61 +1,125 @@
 :root {
   --main: #001f60;
   --point: #ffe800;
+  --background: #eaeef5;
   --white: #fff;
+  --gray: #525252;
+  --title: 'Pretendard-ExtraBold';
+  --sub-title: 'Tenada';
+}
+@font-face {
+  font-family: 'Pretendard-Light';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-ExtraBold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tenada';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Orbit';
-  color: #525252;
+  font-family: 'Pretendard-Light';
+  color: var(--gray);
 }
 #wrap {
   width: 100%;
 }
+#container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
 
 #header {
-  width: 100%;
-  height: 100px;
+  position: fixed;
   top: 0px;
+  width: 100%;
+  height: 90px;
   display: flex;
   z-index: 10;
-  position: fixed;
-  background-color: #ffffff;
+  background-color: transparent;
+  transition: all 300ms ease;
+}
+#header::after {
+  content: '';
+  width: 100%;
+  height: 0;
+  background-color: #ffffffec;
+  position: absolute;
+  top: 90px;
+  transition: all 0.6s;
+  z-index: 100;
+}
+#header.on::after {
+  height: 225px;
 }
 .logo {
   width: 20%;
   display: flex;
-  padding-top: 23px;
-  padding-left: 120px;
+  margin-top: 25px;
+  margin-left: 80px;
   z-index: 100;
-}
-.logo img {
-  width: 150px;
+  background-image: url(../assert/header/logo-2.png);
+  background-size: 120px;
+  background-repeat: no-repeat;
 }
 .nav {
   width: 80%;
-  z-index: 100;
+  z-index: 1000;
 }
 .nav > ul {
   display: flex;
   justify-content: right;
-  padding-top: 23px;
-  margin-right: 90px;
+  padding-top: 25px;
+  margin-right: 50px;
 }
 .nav > ul > li {
   position: relative;
 }
 .nav > ul > li > a {
   display: block;
-  padding: 10px 30px;
+  padding: 10px 20px 27px 20px;
   font-size: 20px;
-  font-weight: bold;
+  color: var(--white);
+  font-family: var(--title);
+  width: 160px;
+  text-align: center;
+}
+.nav > ul > li a:hover {
   color: var(--main);
+}
+.nav > ul > li::after {
+  content: '';
+  display: block;
+  width: 80px;
+  border-bottom: 5px solid var(--main);
+  margin: 0px auto;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+.nav > ul > li:hover::after {
+  transform: scaleX(1);
 }
 .nav > ul > li > ul {
   position: absolute;
-  top: 60px;
+  top: 80px;
   width: 100%;
   text-align: center;
   display: none;
@@ -63,4 +127,21 @@
 .nav > ul > li > ul > li > a {
   display: block;
   padding: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.nav > ul > li > ul > li > a:hover {
+  color: var(--main);
+}
+#header.fixed {
+  background-color: #ffffffec;
+}
+#header.fixed ul > li > a {
+  color: var(--gray);
+}
+#header.fixed ul > li > a:hover {
+  color: var(--main);
+}
+#header.fixed .logo {
+  background-image: url(../assert/header/logo.png);
 }

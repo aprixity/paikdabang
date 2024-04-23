@@ -12,6 +12,10 @@
 
     <!-- script -->
     <script src="./script/index.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div id="wrap">
@@ -104,7 +108,90 @@
             </li>
           </ul>
         </section>
+
+        <!-- best-menu -->
+        <section id="best-menu">
+          <h1><span>BEST!</span><br />추천메뉴</h1>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu1-원조커피.png" alt="원조커피" />
+                <h3>원조커피</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu2-카페라떼.png" alt="카페라떼" />
+                <h3>카페라떼</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu3-아샷추.png" alt="아샷추" />
+                <h3>아샷추</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu4-미숫가루.png" alt="미숫가루" />
+                <h3>미숫가루</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu5-청포도에이드.png" alt="청포도에이드" />
+                <h3>청포도에이드</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu6-완전토마토주스.png" alt="완전토마토주스" />
+                <h3>완전토마토주스</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu7-딸기라떼.png" alt="딸기라떼" />
+                <h3>딸기라떼</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu8-크리미슈.png" alt="크리미슈" />
+                <h3>크리미슈</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu9-노말한소프트.png" alt="노말한소프트" />
+                <h3>노말한소프트</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu10-사라다빵.png" alt="사라다빵" />
+                <h3>사라다빵</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu11-원조빽스치노.png" alt="원조빽스치노" />
+                <h3>원조빽스치노</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu12-딸기바나나빽스치노.png" alt="딸기바나나빽스치노" />
+                <h3>딸기바나나빽스치노</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu13-초코바나나빽스치노.png" alt="초코바나나빽스치노" />
+                <h3>초코바나나빽스치노</h3>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assert/best-menu/best-menu14-피스타치오빽스치노.png" alt="피스타치오빽스치노" />
+                <h3>피스타치오빽스치노</h3>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </section>
       </div>
     </div>
+
+    <script>
+      const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 5,
+        spaceBetween: 50,
+        pagination: false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        scrollbar: false,
+      });
+    </script>
   </body>
 </html>

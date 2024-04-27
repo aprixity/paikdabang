@@ -14,8 +14,10 @@
     <script src="./script/index.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+    <script type="text/javascript" src="fullpage.js"></script>
   </head>
   <body>
     <div id="wrap">
@@ -78,7 +80,7 @@
           </ul>
         </nav>
       </header>
-      <div id="container">
+      <div id="fullpage">
         <!-- header -->
         <section class="background">
           <video src="./assert/빽다방 영상.mp4" muted autoplay loop=""></video>
@@ -201,8 +203,22 @@
           </div>
         </section>
 
+        <!-- store -->
+        <section id="store">
+          <h1>늘 머무르고 싶은 공간</h1>
+          <p>빽다방의 포인트 컬러들이 어우러져 따스하고 아늑한 분위기를 만들어줍니다.</p>
+          <ul>
+            <li>
+              <img src="./assert/store/exterior02.jpg" alt="빽다방 외관" />
+            </li>
+            <li>
+              <img src="./assert/store/interior03.jpg" alt="빽다방 내부" />
+            </li>
+          </ul>
+        </section>
+
         <!-- footer -->
-        <footer id="footer">
+        <section id="footer">
           <a href="#"><img src="./assert/footer/flogo.png" alt="더본 로고" /></a>
           <ul>
             <li>(주)더본코리아</li>
@@ -236,7 +252,7 @@
             <option value="#">백철판</option>
             <option value="#">호텔더본</option>
           </select>
-        </footer>
+        </section>
       </div>
     </div>
 

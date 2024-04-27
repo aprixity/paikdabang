@@ -217,3 +217,36 @@
 #membership .benefit img {
   width: 200px;
 }
+
+/* store */
+#store {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* background-color: #001e6079; */
+}
+#store h1 {
+  font-size: 50px;
+  font-family: var(--sub-title);
+  color: var(--point);
+  text-align: center;
+  padding-top: 150px;
+}
+#store p {
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 50px;
+  /* color: var(--white); */
+}
+#store ul {
+  display: flex;
+  justify-content: center;
+}
+#store ul li {
+  padding: 0px 30px;
+}
+#store img {
+  width: 800px;
+  height: 550px;
+  object-fit: cover;
+}

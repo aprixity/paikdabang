@@ -1,7 +1,7 @@
 window.onload = function () {
   const header = document.querySelector('header');
   const headerHeight = header.getBoundingClientRect().height;
-  const container = document.getElementById('container');
+  const container = document.getElementById('fullpage');
 
   container.addEventListener('scroll', () => {
     if (container.scrollTop > 0) {

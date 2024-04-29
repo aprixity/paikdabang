@@ -26,6 +26,21 @@
   font-style: normal;
 }
 
+/* 스크롤바 없애기 */
+body {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+/*특정 부분 스크롤바 없애기*/
+.box {
+  -ms-overflow-style: none;
+}
+.box::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -38,11 +53,11 @@
 #fullpage {
   width: 100%;
   height: 100vh;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  overflow: auto;
   scroll-snap-type: y mandatory;
 }
 section {
+  height: 100vh;
   scroll-snap-align: start;
 }
 
@@ -194,4 +209,44 @@ select {
   position: absolute;
   right: 300px;
   top: 50px;
+}
+
+/* mobile */
+@media screen and (max-width: 430px) {
+  #fullpage {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-type: none;
+  }
+
+  /* header */
+  #header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    display: block;
+    background-color: var(--white);
+    transition: all 300ms ease;
+  }
+  #header .logo {
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    z-index: 100;
+    display: flex;
+    background-image: url(../assert/header/logo.png);
+    background-size: 90px;
+  }
+  #header .nav {
+    display: none;
+  }
+  #header.fixed {
+    background-color: #ffffffdc;
+  }
+  #header.fixed .logo {
+    background-image: url(../assert/header/logo.png);
+  }
 }

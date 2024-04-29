@@ -1,4 +1,5 @@
 window.onload = function () {
+  // 헤더 고정
   const header = document.querySelector('header');
   const headerHeight = header.getBoundingClientRect().height;
   const container = document.getElementById('fullpage');
@@ -34,5 +35,26 @@ window.onload = function () {
       sub.style.height = '0px';
     });
     document.getElementById('header').classList.remove('on');
+  });
+
+  // best-menu 슬라이드
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 2,
+    spaceBetween: 150,
+    pagination: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    scrollbar: false,
+    breakpoints: {
+      431: {
+        slidesPerView: 5,
+        spaceBetween: 150,
+      },
+    },
   });
 };

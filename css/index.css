@@ -268,7 +268,7 @@
   /* 신메뉴 */
   #new-menu {
     width: 100%;
-    height: 800px;
+    height: 700px;
     position: relative;
     overflow: hidden;
     background-color: var(--point);
@@ -278,37 +278,28 @@
     font-family: var(--sub-title);
     color: var(--main);
     text-align: center;
-    padding-top: 45px;
+    padding-top: 55px;
   }
   #new-menu > h1 > span {
     font-size: 13px;
     position: absolute;
     left: 34%;
-    top: 10%;
+    top: 12.5%;
     transform: skew(15deg, -15deg);
     color: var(--main);
   }
   #new-menu ul {
     width: 100%;
+    display: block;
   }
   #new-menu ul li {
     text-align: center;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 300px;
-  }
-  #new-menu ul li:first-child {
-    position: absolute;
-    left: -20px;
-    top: 15%;
-  }
-  #new-menu ul li:nth-child(2) {
-    position: absolute;
-    left: 150px;
-    top: 32%;
-  }
-  #new-menu ul li:last-child {
-    position: absolute;
-    left: -20px;
-    top: 57%;
+    padding-bottom: 30px;
   }
   #new-menu ul li:first-child p {
     color: #bb0000;
@@ -320,20 +311,15 @@
     color: #00268f;
   }
   #new-menu img {
-    width: 200px;
+    width: 300px;
     animation: new-menu-mobile 2s infinite;
-  }
-  #new-menu ul li:nth-child(2) img {
-    animation: new-menu-mobile2 2s infinite;
-  }
-  #new-menu ul li:last-child img {
-    animation: new-menu-mobile3 2s infinite;
   }
   #new-menu p {
     position: absolute;
+    width: 100%;
     left: 50%;
     bottom: 5%;
-    font-size: 18px;
+    font-size: 20px;
     transform: translateX(-50%);
     font-family: var(--title);
   }
@@ -343,7 +329,7 @@
     top: 98%;
     transform: translateX(-50%);
     display: block;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   /* best-menu */
@@ -393,7 +379,6 @@
   .swiper-slide {
     opacity: 0.5;
   }
-
   .swiper-slide h3 {
     text-align: center;
     width: 130px;
@@ -427,30 +412,6 @@
 }
 
 @keyframes new-menu-mobile {
-  0% {
-    transform: rotate(5deg);
-  }
-  50% {
-    transform: rotate(15deg);
-  }
-  100% {
-    transform: rotate(5deg);
-  }
-}
-
-@keyframes new-menu-mobile2 {
-  0% {
-    transform: rotate(-5deg);
-  }
-  50% {
-    transform: rotate(-20deg);
-  }
-  100% {
-    transform: rotate(-5deg);
-  }
-}
-
-@keyframes new-menu-mobile3 {
   0% {
     transform: rotate(15deg);
   }

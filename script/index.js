@@ -37,6 +37,23 @@ window.onload = function () {
     document.getElementById('header').classList.remove('on');
   });
 
+  //
+  let currentIndex = 0;
+  const newMenu = document.querySelectorAll('.new-menu');
+
+  newMenu.forEach((img) => (img.style.opacity = '0'));
+  newMenu[0].style.opacity = '1';
+
+  setInterval(() => {
+    let nextIndex = (currentIndex + 1) % newMenu.length;
+
+    newMenu[currentIndex].style.opacity = '0';
+    newMenu[nextIndex].style.opacity = '1';
+    newMenu.forEach((img) => (img.style.transition = 'all 1s'));
+
+    currentIndex = nextIndex;
+  }, 3000);
+
   // best-menu 슬라이드
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',

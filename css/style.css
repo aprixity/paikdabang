@@ -216,7 +216,7 @@ select {
   #fullpage {
     width: 100%;
     height: 100vh;
-    scroll-snap-type: none;
+    /* scroll-snap-type: none; */
   }
 
   /* header */

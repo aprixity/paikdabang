@@ -37,30 +37,34 @@ window.onload = function () {
     document.getElementById('header').classList.remove('on');
   });
 
-  //
-  let currentIndex = 0;
-  const newMenu = document.querySelectorAll('.new-menu');
+  //new menu 페이드
+  var mql = window.matchMedia('screen and (max-width: 430px)');
 
-  newMenu.forEach((img) => (img.style.opacity = '0'));
-  newMenu[0].style.opacity = '1';
+  if (mql.matches) {
+    let currentIndex = 0;
+    const newMenu = document.querySelectorAll('.new-menu');
 
-  setInterval(() => {
-    let nextIndex = (currentIndex + 1) % newMenu.length;
+    newMenu.forEach((img) => (img.style.opacity = '0'));
+    newMenu[0].style.opacity = '1';
 
-    newMenu[currentIndex].style.opacity = '0';
-    newMenu[nextIndex].style.opacity = '1';
-    newMenu.forEach((img) => (img.style.transition = 'all 1s'));
+    setInterval(() => {
+      let nextIndex = (currentIndex + 1) % newMenu.length;
 
-    currentIndex = nextIndex;
-  }, 3000);
+      newMenu[currentIndex].style.opacity = '0';
+      newMenu[nextIndex].style.opacity = '1';
+      newMenu.forEach((img) => (img.style.transition = 'all 1s'));
+
+      currentIndex = nextIndex;
+    }, 3000);
+  }
 
   // best-menu 슬라이드
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,
+    slidesPerView: 3,
     centeredSlides: true,
-    slidesPerView: 2,
-    spaceBetween: 150,
+    spaceBetween: 50,
     pagination: false,
     navigation: {
       nextEl: '.swiper-button-next',
@@ -71,6 +75,8 @@ window.onload = function () {
       431: {
         slidesPerView: 5,
         spaceBetween: 150,
+        slidesOffsetBefore: 50,
+        centeredSlides: true,
       },
     },
   });

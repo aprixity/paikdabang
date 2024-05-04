@@ -6,6 +6,9 @@
   height: 100vh;
   object-fit: cover;
 }
+#fullpage > img {
+  display: none;
+}
 
 /* new-menu */
 #new-menu {
@@ -258,11 +261,16 @@
   .background {
     width: 100%;
     height: 300px;
+    display: none;
   }
-  .background video {
+
+  /* 배너 */
+  #fullpage > img {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
+    padding-top: 60px;
   }
 
   /* 신메뉴 */
@@ -382,8 +390,9 @@
   }
   .swiper-slide h3 {
     text-align: center;
-    width: 100%;
+    width: 90px;
     color: var(--white);
+    padding-left: 15px;
   }
   .swiper-button-prev,
   .swiper-button-next {
@@ -402,7 +411,7 @@
     opacity: 1;
   }
   .swiper-slide-active img {
-    transform: scale(1.2);
+    transform: scale(1.5) translateY(-10%);
   }
   .swiper-slide-active h3 {
     transform: scale(1.1) translateY(20%);

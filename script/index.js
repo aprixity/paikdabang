@@ -13,7 +13,7 @@ window.onload = function () {
   });
 
   // 메뉴
-  let navList = document.querySelector('nav > ul');
+
   let subMenus = document.querySelectorAll('.nav > ul > li > ul');
 
   subMenus.forEach(function (submenu) {
@@ -23,24 +23,23 @@ window.onload = function () {
     submenu.style.transition = 'all 600ms';
   });
 
-  navList.addEventListener('mouseover', () => {
-    navList.querySelectorAll('.submenu').forEach((sub) => {
-      sub.style.height = '225px';
-    });
-    document.getElementById('header').classList.add('on');
-  });
-
-  navList.addEventListener('mouseout', () => {
-    navList.querySelectorAll('.submenu').forEach((sub) => {
-      sub.style.height = '0px';
-    });
-    document.getElementById('header').classList.remove('on');
-  });
-
   //new menu 페이드
   var mql = window.matchMedia('screen and (max-width: 430px)');
 
   if (mql.matches) {
+    let MnavList = document.querySelectorAll('.nav > ul > li');
+
+    MnavList.forEach(function (navItem) {
+      navItem.addEventListener('mouseover', function () {
+        let subMenu = this.querySelector('.submenu');
+        subMenu.style.height = subMenu.scrollHeight + 'px';
+      });
+
+      navItem.addEventListener('mouseout', function () {
+        this.querySelector('.submenu').style.height = '0px';
+      });
+    });
+
     let currentIndex = 0;
     const newMenu = document.querySelectorAll('.new-menu');
 
@@ -56,6 +55,22 @@ window.onload = function () {
 
       currentIndex = nextIndex;
     }, 3000);
+  } else {
+    let navList = document.querySelector('nav > ul');
+
+    navList.addEventListener('mouseover', () => {
+      navList.querySelectorAll('.submenu').forEach((sub) => {
+        sub.style.height = '225px';
+      });
+      document.getElementById('header').classList.add('on');
+    });
+
+    navList.addEventListener('mouseout', () => {
+      navList.querySelectorAll('.submenu').forEach((sub) => {
+        sub.style.height = '0px';
+      });
+      document.getElementById('header').classList.remove('on');
+    });
   }
 
   // best-menu 슬라이드
@@ -79,5 +94,17 @@ window.onload = function () {
         centeredSlides: true,
       },
     },
+  });
+
+  // 모바일 메뉴
+  document.querySelector('.menu-btn').addEventListener('click', function () {
+    document.querySelector('.nav-list').style.display = 'block';
+    document.querySelector('.close-btn').style.display = 'block';
+    document.querySelector('.menu-btn').style.display = 'none';
+  });
+  document.querySelector('.close-btn').addEventListener('click', function () {
+    document.querySelector('.nav-list').style.display = 'none';
+    document.querySelector('.close-btn').style.display = 'none';
+    document.querySelector('.menu-btn').style.display = 'block';
   });
 };

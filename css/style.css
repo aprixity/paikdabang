@@ -67,7 +67,7 @@ section {
   width: 100%;
   height: 90px;
   display: flex;
-  z-index: 10;
+  z-index: 11;
   background-color: transparent;
   transition: all 300ms ease;
 }
@@ -89,7 +89,6 @@ section {
   display: flex;
   margin-top: 25px;
   margin-left: 80px;
-  z-index: 100;
   background-image: url(../assert/header/logo-2.png);
   background-size: 120px;
   background-repeat: no-repeat;
@@ -97,6 +96,9 @@ section {
 .nav {
   width: 80%;
   z-index: 1000;
+}
+.nav .nav-btn {
+  display: none;
 }
 .nav > ul {
   display: flex;
@@ -228,26 +230,74 @@ select {
     background-color: var(--white);
     transition: all 300ms ease;
   }
+  #header::after {
+    content: '';
+    width: 0;
+  }
   #header .logo {
-    width: 100%;
-    height: 60px;
+    width: 50%;
+    height: 40px;
     margin: 0;
     position: absolute;
     left: 20px;
     top: 15px;
-    z-index: 100;
     display: flex;
     background-image: url(../assert/header/logo.png);
     background-size: 90px;
   }
-  #header .nav {
+  #header .nav .nav-btn {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  #header .nav .nav-btn .close-btn {
     display: none;
   }
-  #header.fixed {
-    background-color: #ffffffdc;
+  #header .nav .nav-btn .close-btn img {
+    width: 20px;
   }
-  #header.fixed .logo {
-    background-image: url(../assert/header/logo.png);
+  #header .nav > ul {
+    display: none;
+    position: fixed;
+    width: 80%;
+    height: 100vh;
+    background-color: #fffffff1;
+    top: 60px;
+    right: 0;
+    margin-right: 0;
+    padding-top: 10px;
+    z-index: 9999;
+  }
+  .nav > ul > li {
+    border-bottom: 0.5px solid #b4b4b4;
+    padding: 10px 20px;
+  }
+  .nav > ul > li::after {
+    content: '';
+    display: none;
+  }
+  .nav > ul > li > a {
+    color: var(--gray);
+    text-align: left;
+    font-size: 18px;
+    padding: 10px;
+  }
+  .nav > ul > li > ul {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    text-align: left;
+  }
+  .nav > ul > li > ul > li > a {
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'Pretendard-Light';
+  }
+  #header.fixed {
+    background-color: #fffffff1;
   }
 
   /* footer */
